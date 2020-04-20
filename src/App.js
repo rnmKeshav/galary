@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import Image from "./components/image";
+
+const App = () => {
+  let total_image = 50;
+
+  const getImage = () => {
+    let images = [];
+
+    for(let i=0; i<total_image; i++) {
+      const width = 200;
+      const height = 300;
+      const src = `https://picsum.photos/id/${i}/${width}/${height}`;
+
+      images.push(<Image src={src} width={width} height={height} key={i}/>);
+    }
+
+    return images;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {getImage()}
     </div>
   );
 }
