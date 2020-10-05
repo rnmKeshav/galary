@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Image from "./components/image";
+import InfiniteScroll from "./components/infinite-scroll/index";
 
 const App = () => {
   let total_image = 50;
@@ -21,7 +22,8 @@ const App = () => {
   }
   return (
     <div>
-      {getImage()}
+      {/* {getImage()} */}
+      <InfiniteScroll />
     </div>
   );
 }
